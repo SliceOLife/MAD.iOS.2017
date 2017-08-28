@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Person Start View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="PersonStartViewController" customModule="ContactCard" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_default" translatesAutoresizingMaskIntoConstraints="NO" id="qpQ-A6-WIk" userLabel="Avatar">
+                                <rect key="frame" x="87.5" y="28" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="5jd-6M-MLG">
+                                        <variation key="heightClass=compact-widthClass=compact" constant="100"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="200" id="p8B-Sc-8Rt">
+                                        <variation key="heightClass=compact-widthClass=compact" constant="100"/>
+                                    </constraint>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUs-di-Dqj" userLabel="First Name">
+                                <rect key="frame" x="168.5" y="236" width="38" height="21"/>
+                                <accessibility key="accessibilityConfiguration" label="John Doe"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZ2-df-8GG" userLabel="RefreshButton">
+                                <rect key="frame" x="161" y="294" width="53" height="30"/>
+                                <state key="normal" title="Refresh"/>
+                                <connections>
+                                    <action selector="refreshBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="taJ-Ve-5pG"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFC-fd-jiv" userLabel="Last Name">
+                                <rect key="frame" x="171.5" y="265" width="31" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZFC-fd-jiv" firstAttribute="top" secondItem="cUs-di-Dqj" secondAttribute="bottom" constant="8" id="0ha-ZQ-0h0"/>
+                            <constraint firstItem="qpQ-A6-WIk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8dF-us-hRQ"/>
+                            <constraint firstItem="ZFC-fd-jiv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9F8-d0-0Ku"/>
+                            <constraint firstItem="cUs-di-Dqj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AlX-SK-H73"/>
+                            <constraint firstItem="uZ2-df-8GG" firstAttribute="top" secondItem="ZFC-fd-jiv" secondAttribute="bottom" constant="8" id="Buv-oY-Hdd"/>
+                            <constraint firstItem="cUs-di-Dqj" firstAttribute="top" secondItem="qpQ-A6-WIk" secondAttribute="bottom" constant="8" id="EKj-ya-F9K"/>
+                            <constraint firstItem="uZ2-df-8GG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ftT-hs-30p"/>
+                            <constraint firstItem="qpQ-A6-WIk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="jQX-uK-fJG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="avatarImageView" destination="qpQ-A6-WIk" id="cRt-DZ-QWS"/>
+                        <outlet property="firstNameLabel" destination="cUs-di-Dqj" id="drZ-T0-tJn"/>
+                        <outlet property="lastNameLabel" destination="ZFC-fd-jiv" id="HBF-Qb-Kpy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="user_default" width="200" height="200"/>
+    </resources>
+</document>
