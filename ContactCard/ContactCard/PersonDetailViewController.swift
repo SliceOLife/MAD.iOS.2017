@@ -1,5 +1,5 @@
 //
-//  PersonStartViewController.swift
+//  PersonDetailViewController.swift
 //  ContactCard
 //
 //  Created by Jordi van Hoorn on 8/28/17.
@@ -8,7 +8,9 @@
 
 import UIKit
 
-class PersonStartViewController: UIViewController {
+class PersonDetailViewController: UIViewController {
+    var person: ApiResults.ResultsElement?;
+    
     @IBOutlet weak var firstNameLabel: UILabel!
     @IBOutlet weak var lastNameLabel: UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
@@ -18,6 +20,12 @@ class PersonStartViewController: UIViewController {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(grafRotate), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let person = self.person {
+            handleIncomingPerson(firstName: person.name.first, lastName: person.name.last, imageUrl: person.picture.large)
+        }
     }
     
     func grafRotate() {
@@ -36,47 +44,14 @@ class PersonStartViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func requestNewUsers(amount: Int) {
-        let url = URL(string: "https://randomuser.me/api?results=\(amount)")
-        
-        
-        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
-            guard error == nil else {
-                print(error!)
-                return
-            }
-            
-            guard let data = data else {
-                print("Data is empty")
-                return
-            }
-            
-            let json = try! JSONSerialization.jsonObject(with: data) as? [String: Any]
-            let results = json?["results"] as? [[String: Any]]
-            
-            for result in results! {
-                let name = result["name"] as? [String:Any]
-                let firstName = name?["first"] as? String
-                let lastName = name?["last"] as? String
-                
-                let imageData = result["picture"] as? [String:Any]
-                let imageUrl = imageData?["large"] as? String
-                
-                DispatchQueue.main.async(execute: {
-                    self.handleNewUserUpdate(firstName: firstName!, lastName: lastName!, imageUrl: imageUrl!)
-                })
-            }
-        }
-        
-        task.resume()
-    }
-    
     
     // Handle new randomuser update
-    func handleNewUserUpdate(firstName: String, lastName: String, imageUrl: String) {
+    func handleIncomingPerson(firstName: String, lastName: String, imageUrl: String) {
         //print("Got a new user: \(name) with image URL: \(imageUrl)")
         firstNameLabel.text = firstName.capitalized
         lastNameLabel.text = lastName.capitalized
+        
+        self.navigationItem.title = "\(firstName.capitalized)'s details"
         
         let url = URL(string: imageUrl)
         
@@ -88,23 +63,4 @@ class PersonStartViewController: UIViewController {
             }
         }
     }
-    
-    
-    @IBAction func refreshBtn(_ sender: Any) {
-        self.avatarImageView.alpha = 0.1
-        // Request a new user on button press
-        requestNewUsers(amount: 1)
-    }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

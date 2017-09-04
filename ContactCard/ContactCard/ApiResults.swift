@@ -7,9 +7,7 @@
 // model classes when using SwiftyJSON to parse JSON in swift
 //
 
-import SwiftyJSON
-
-class Results {
+class ApiResults {
     var info: Info
     var results: [ResultsElement]
 

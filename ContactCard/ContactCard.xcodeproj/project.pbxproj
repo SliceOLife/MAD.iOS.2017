@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		8D4A6E811F537DE100665262 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A6E801F537DE100665262 /* AppDelegate.swift */; };
-		8D4A6E831F537DE100665262 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A6E821F537DE100665262 /* ViewController.swift */; };
 		8D4A6E861F537DE100665262 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4A6E841F537DE100665262 /* Main.storyboard */; };
 		8D4A6E881F537DE100665262 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D4A6E871F537DE100665262 /* Assets.xcassets */; };
-		8D4A6E951F54199300665262 /* PersonStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A6E941F54199300665262 /* PersonStartViewController.swift */; };
+		8D4A6E951F54199300665262 /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A6E941F54199300665262 /* PersonDetailViewController.swift */; };
+		8DBD0D491F5D575B00A12208 /* PersonStartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD0D481F5D575B00A12208 /* PersonStartTableViewController.swift */; };
+		8DBD0D4B1F5D599D00A12208 /* ApiResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD0D4A1F5D599D00A12208 /* ApiResults.swift */; };
+		8DBD0D4D1F5D5A4700A12208 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD0D4C1F5D5A4700A12208 /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8D4A6E7D1F537DE100665262 /* ContactCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D4A6E801F537DE100665262 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8D4A6E821F537DE100665262 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8D4A6E851F537DE100665262 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D4A6E871F537DE100665262 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D4A6E8C1F537DE100665262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8D4A6E941F54199300665262 /* PersonStartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonStartViewController.swift; sourceTree = "<group>"; };
+		8D4A6E941F54199300665262 /* PersonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
+		8DBD0D481F5D575B00A12208 /* PersonStartTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonStartTableViewController.swift; sourceTree = "<group>"; };
+		8DBD0D4A1F5D599D00A12208 /* ApiResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiResults.swift; sourceTree = "<group>"; };
+		8DBD0D4C1F5D5A4700A12208 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +58,14 @@
 		8D4A6E7F1F537DE100665262 /* ContactCard */ = {
 			isa = PBXGroup;
 			children = (
+				8DBD0D4C1F5D5A4700A12208 /* SwiftyJSON.swift */,
+				8DBD0D4A1F5D599D00A12208 /* ApiResults.swift */,
 				8D4A6E801F537DE100665262 /* AppDelegate.swift */,
-				8D4A6E821F537DE100665262 /* ViewController.swift */,
 				8D4A6E841F537DE100665262 /* Main.storyboard */,
 				8D4A6E871F537DE100665262 /* Assets.xcassets */,
 				8D4A6E8C1F537DE100665262 /* Info.plist */,
-				8D4A6E941F54199300665262 /* PersonStartViewController.swift */,
+				8D4A6E941F54199300665262 /* PersonDetailViewController.swift */,
+				8DBD0D481F5D575B00A12208 /* PersonStartTableViewController.swift */,
 			);
 			path = ContactCard;
 			sourceTree = "<group>";
@@ -136,9 +142,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D4A6E831F537DE100665262 /* ViewController.swift in Sources */,
-				8D4A6E951F54199300665262 /* PersonStartViewController.swift in Sources */,
+				8D4A6E951F54199300665262 /* PersonDetailViewController.swift in Sources */,
 				8D4A6E811F537DE100665262 /* AppDelegate.swift in Sources */,
+				8DBD0D491F5D575B00A12208 /* PersonStartTableViewController.swift in Sources */,
+				8DBD0D4D1F5D5A4700A12208 /* SwiftyJSON.swift in Sources */,
+				8DBD0D4B1F5D599D00A12208 /* ApiResults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
