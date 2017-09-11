@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "AVn-WR-ami"; */
+"AVn-WR-ami.text" = "Vliegveld Naam";
+
+/* Class = "UINavigationItem"; title = "Airports"; ObjectID = "nr1-4I-NZG"; */
+"nr1-4I-NZG.title" = "Vliegvelden";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "oVA-EQ-vTE"; */
+"oVA-EQ-vTE.text" = "Vliegveld Locatie";
+
+/* Class = "UINavigationItem"; title = "Vliegvelden"; ObjectID = "S7t-2d-3hQ"; */
+"S7t-2d-3hQ.title" = "Vliegveld Details";

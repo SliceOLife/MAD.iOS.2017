@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xM3-46-LPM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Airports-->
+        <scene sceneID="1LH-oA-q35">
+            <objects>
+                <tableViewController id="LLg-E3-mwH" customClass="TableViewController" customModule="Airports" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="e2M-GT-xEE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="airportCell" id="Rlr-wu-P2k" customClass="AirportTableViewCell" customModule="Airports">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rlr-wu-P2k" id="ubQ-B1-va7">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Airport Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVn-WR-ami" userLabel="lblAirportName">
+                                            <rect key="frame" x="5" y="0.0" width="102.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Airport Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVA-EQ-vTE" userLabel="lblAirportLocation">
+                                            <rect key="frame" x="5" y="22" width="102.5" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="oVA-EQ-vTE" firstAttribute="top" secondItem="AVn-WR-ami" secondAttribute="bottom" constant="1" id="8vZ-vt-HSy"/>
+                                        <constraint firstItem="AVn-WR-ami" firstAttribute="top" secondItem="ubQ-B1-va7" secondAttribute="top" id="BRm-Mn-Rgg"/>
+                                        <constraint firstItem="oVA-EQ-vTE" firstAttribute="leading" secondItem="ubQ-B1-va7" secondAttribute="leading" constant="5" id="UKL-yY-xZk"/>
+                                        <constraint firstItem="AVn-WR-ami" firstAttribute="leading" secondItem="ubQ-B1-va7" secondAttribute="leading" constant="5" id="Uf1-84-gte"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="airportLocation" destination="oVA-EQ-vTE" id="c0W-9C-5MD"/>
+                                    <outlet property="airportName" destination="AVn-WR-ami" id="pm5-y0-cmv"/>
+                                    <segue destination="WIa-cP-euQ" kind="show" identifier="showDetailSegue" id="JYU-8i-AIT"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="LLg-E3-mwH" id="h0c-Ef-Ehr"/>
+                            <outlet property="delegate" destination="LLg-E3-mwH" id="tzh-tt-8u1"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Airports" id="nr1-4I-NZG"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WPl-wE-b8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2304.8000000000002" y="787.55622188905556"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="ESC-Le-5TU">
+            <objects>
+                <viewController id="WIa-cP-euQ" customClass="detailViewController" customModule="Airports" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kkb-lf-H2k"/>
+                        <viewControllerLayoutGuide type="bottom" id="uSa-BK-ptI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2R1-hF-hlA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sZ1-eJ-N1S">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="sZ1-eJ-N1S" secondAttribute="trailing" id="53m-Rw-NkV"/>
+                            <constraint firstItem="uSa-BK-ptI" firstAttribute="top" secondItem="sZ1-eJ-N1S" secondAttribute="bottom" id="5Ni-fH-TzG"/>
+                            <constraint firstItem="sZ1-eJ-N1S" firstAttribute="leading" secondItem="2R1-hF-hlA" secondAttribute="leading" id="KoA-Cf-KbZ"/>
+                            <constraint firstItem="sZ1-eJ-N1S" firstAttribute="top" secondItem="Kkb-lf-H2k" secondAttribute="bottom" id="cVI-HJ-QOW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="sZ1-eJ-N1S" id="5er-mS-XXz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YZ5-pC-5BI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3084" y="787.55622188905556"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="N3x-GW-h2K">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xM3-46-LPM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="le3-61-nPd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LLg-E3-mwH" kind="relationship" relationship="rootViewController" id="MsG-fZ-dGf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WD9-YJ-797" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1365.5999999999999" y="787.55622188905556"/>
+        </scene>
+    </scenes>
+</document>
