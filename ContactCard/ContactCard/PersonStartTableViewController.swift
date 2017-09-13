@@ -20,6 +20,10 @@ class PersonStartTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+        }
+        
         self.requestNewUsers(amount: 20)
 
         // Uncomment the following line to preserve selection between presentations

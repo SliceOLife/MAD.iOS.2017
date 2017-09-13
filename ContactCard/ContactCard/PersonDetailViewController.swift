@@ -19,6 +19,11 @@ class PersonDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if #available(iOS 11.0, *) {
+            navigationItem.largeTitleDisplayMode = .never
+        }
+        
+        
         NotificationCenter.default.addObserver(self, selector: #selector(grafRotate), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
     
@@ -28,7 +33,7 @@ class PersonDetailViewController: UIViewController {
         }
     }
     
-    func grafRotate() {
+    @objc func grafRotate() {
         roundOffImageView()
     }
     
