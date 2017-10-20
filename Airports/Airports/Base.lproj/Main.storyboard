@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xM3-46-LPM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xM3-46-LPM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -48,7 +50,7 @@
                                 <connections>
                                     <outlet property="airportLocation" destination="oVA-EQ-vTE" id="c0W-9C-5MD"/>
                                     <outlet property="airportName" destination="AVn-WR-ami" id="pm5-y0-cmv"/>
-                                    <segue destination="WIa-cP-euQ" kind="show" identifier="showDetailSegue" id="JYU-8i-AIT"/>
+                                    <segue destination="Jxo-Bs-cUS" kind="show" identifier="showDetailSegue" id="D2o-wu-UmC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -63,37 +65,68 @@
             </objects>
             <point key="canvasLocation" x="2304.8000000000002" y="787.55622188905556"/>
         </scene>
-        <!--Detail View Controller-->
-        <scene sceneID="ESC-Le-5TU">
+        <!--Airport details-->
+        <scene sceneID="417-yh-lNn">
             <objects>
-                <viewController id="WIa-cP-euQ" customClass="detailViewController" customModule="Airports" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Kkb-lf-H2k"/>
-                        <viewControllerLayoutGuide type="bottom" id="uSa-BK-ptI"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2R1-hF-hlA">
+                <viewController title="Airport details" id="Jxo-Bs-cUS" customClass="detailViewController" customModule="Airports" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mOj-zw-ySX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sZ1-eJ-N1S">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5hm-b9-l2f">
+                                <rect key="frame" x="0.0" y="64" width="375" height="211"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5hm-b9-l2f" secondAttribute="height" multiplier="16:9" id="eT8-Iq-DSY"/>
+                                </constraints>
                             </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIXY AIRPORT" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMh-LZ-Opy" userLabel="Airport Name">
+                                <rect key="frame" x="16" y="283" width="343" height="31.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exampleville" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gw2-MD-Hen" userLabel="Location">
+                                <rect key="frame" x="16" y="322" width="343" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance from FIXY: 1337 m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k50-to-6HM" userLabel="Distance">
+                                <rect key="frame" x="16" y="626" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="sZ1-eJ-N1S" secondAttribute="trailing" id="53m-Rw-NkV"/>
-                            <constraint firstItem="uSa-BK-ptI" firstAttribute="top" secondItem="sZ1-eJ-N1S" secondAttribute="bottom" id="5Ni-fH-TzG"/>
-                            <constraint firstItem="sZ1-eJ-N1S" firstAttribute="leading" secondItem="2R1-hF-hlA" secondAttribute="leading" id="KoA-Cf-KbZ"/>
-                            <constraint firstItem="sZ1-eJ-N1S" firstAttribute="top" secondItem="Kkb-lf-H2k" secondAttribute="bottom" id="cVI-HJ-QOW"/>
+                            <constraint firstItem="h4X-8o-5gR" firstAttribute="trailing" secondItem="cMh-LZ-Opy" secondAttribute="trailing" constant="16" id="9iX-cZ-uyh"/>
+                            <constraint firstItem="Gw2-MD-Hen" firstAttribute="top" secondItem="cMh-LZ-Opy" secondAttribute="bottom" constant="8" id="DE2-wl-c73"/>
+                            <constraint firstItem="h4X-8o-5gR" firstAttribute="bottom" secondItem="k50-to-6HM" secondAttribute="bottom" constant="20" id="E2y-CS-CdX"/>
+                            <constraint firstItem="h4X-8o-5gR" firstAttribute="trailing" secondItem="Gw2-MD-Hen" secondAttribute="trailing" constant="16" id="VVz-fB-cyh"/>
+                            <constraint firstItem="Gw2-MD-Hen" firstAttribute="leading" secondItem="h4X-8o-5gR" secondAttribute="leading" constant="16" id="cMD-nw-sP8"/>
+                            <constraint firstItem="5hm-b9-l2f" firstAttribute="leading" secondItem="h4X-8o-5gR" secondAttribute="leading" id="d8q-a1-UgS"/>
+                            <constraint firstItem="cMh-LZ-Opy" firstAttribute="leading" secondItem="h4X-8o-5gR" secondAttribute="leading" constant="16" id="kSx-eQ-cvA"/>
+                            <constraint firstItem="5hm-b9-l2f" firstAttribute="top" secondItem="h4X-8o-5gR" secondAttribute="top" id="lmv-ST-coa"/>
+                            <constraint firstItem="5hm-b9-l2f" firstAttribute="trailing" secondItem="h4X-8o-5gR" secondAttribute="trailing" id="oJo-4V-tUT"/>
+                            <constraint firstItem="k50-to-6HM" firstAttribute="leading" secondItem="h4X-8o-5gR" secondAttribute="leading" constant="16" id="pYy-af-36Y"/>
+                            <constraint firstItem="cMh-LZ-Opy" firstAttribute="top" secondItem="5hm-b9-l2f" secondAttribute="bottom" constant="8" id="qxM-yX-BKa"/>
+                            <constraint firstItem="h4X-8o-5gR" firstAttribute="trailing" secondItem="k50-to-6HM" secondAttribute="trailing" constant="16" id="vZi-6b-3iW"/>
+                            <constraint firstItem="5hm-b9-l2f" firstAttribute="centerX" secondItem="mOj-zw-ySX" secondAttribute="centerX" id="wue-sJ-u27"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="h4X-8o-5gR"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Airport detail" id="QuU-Rg-OBP"/>
                     <connections>
-                        <outlet property="mapView" destination="sZ1-eJ-N1S" id="5er-mS-XXz"/>
+                        <outlet property="distanceLabel" destination="k50-to-6HM" id="Jrg-1w-t3e"/>
+                        <outlet property="locationLabel" destination="Gw2-MD-Hen" id="wVa-oC-okI"/>
+                        <outlet property="mapView" destination="5hm-b9-l2f" id="yXm-f9-cZz"/>
+                        <outlet property="nameLabel" destination="cMh-LZ-Opy" id="nqW-J5-jbV"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YZ5-pC-5BI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oPU-KK-DJT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3084" y="787.55622188905556"/>
+            <point key="canvasLocation" x="3108" y="788"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="N3x-GW-h2K">
@@ -101,7 +134,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xM3-46-LPM" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="le3-61-nPd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
