@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cQv-1I-2eB">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Users-->
+        <scene sceneID="LEY-AF-ggc">
+            <objects>
+                <tableViewController id="hGH-b7-8Vw" customClass="PersonStartTableViewController" customModule="ContactCard" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="aJb-Ii-7JJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userCell" id="3y1-wG-5rI" customClass="PersonTableViewCell" customModule="ContactCard" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3y1-wG-5rI" id="C4V-bP-mo1">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="user_default" translatesAutoresizingMaskIntoConstraints="NO" id="Wi6-Sy-BQm">
+                                            <rect key="frame" x="8" y="-5" width="63" height="48"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="48" id="Wup-Rw-Vop"/>
+                                                <constraint firstAttribute="height" constant="48" id="hlH-ee-aLt"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWF-oe-Pv2">
+                                            <rect key="frame" x="79" y="11.5" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="uWF-oe-Pv2" firstAttribute="leading" secondItem="Wi6-Sy-BQm" secondAttribute="trailing" constant="15" id="S8d-KQ-bWT"/>
+                                        <constraint firstItem="uWF-oe-Pv2" firstAttribute="centerY" secondItem="C4V-bP-mo1" secondAttribute="centerY" id="e8R-Ja-5Am"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="fullNameLabel" destination="uWF-oe-Pv2" id="62u-jA-wlv"/>
+                                    <outlet property="personImageThumbnail" destination="Wi6-Sy-BQm" id="zBT-Re-M3H"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="segPersonDetails" id="Uy8-Ex-7y8"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hGH-b7-8Vw" id="RPG-Uz-KR6"/>
+                            <outlet property="delegate" destination="hGH-b7-8Vw" id="EWz-yE-LNx"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Users" id="lCE-yW-0vV"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wdK-6d-fHV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-154" y="139"/>
+        </scene>
+        <!--Person Detail View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="PersonDetailViewController" customModule="ContactCard" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_default" translatesAutoresizingMaskIntoConstraints="NO" id="qpQ-A6-WIk" userLabel="Avatar">
+                                <rect key="frame" x="87.5" y="72" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="5jd-6M-MLG">
+                                        <variation key="heightClass=compact-widthClass=compact" constant="100"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="200" id="p8B-Sc-8Rt">
+                                        <variation key="heightClass=compact-widthClass=compact" constant="100"/>
+                                    </constraint>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUs-di-Dqj" userLabel="First Name">
+                                <rect key="frame" x="168.5" y="280" width="38" height="21"/>
+                                <accessibility key="accessibilityConfiguration" label="John Doe"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFC-fd-jiv" userLabel="Last Name">
+                                <rect key="frame" x="171.5" y="309" width="31" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZFC-fd-jiv" firstAttribute="top" secondItem="cUs-di-Dqj" secondAttribute="bottom" constant="8" id="0ha-ZQ-0h0"/>
+                            <constraint firstItem="qpQ-A6-WIk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8dF-us-hRQ"/>
+                            <constraint firstItem="ZFC-fd-jiv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9F8-d0-0Ku"/>
+                            <constraint firstItem="cUs-di-Dqj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AlX-SK-H73"/>
+                            <constraint firstItem="cUs-di-Dqj" firstAttribute="top" secondItem="qpQ-A6-WIk" secondAttribute="bottom" constant="8" id="EKj-ya-F9K"/>
+                            <constraint firstItem="qpQ-A6-WIk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="jQX-uK-fJG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="avatarImageView" destination="qpQ-A6-WIk" id="cRt-DZ-QWS"/>
+                        <outlet property="firstNameLabel" destination="cUs-di-Dqj" id="drZ-T0-tJn"/>
+                        <outlet property="lastNameLabel" destination="ZFC-fd-jiv" id="HBF-Qb-Kpy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="583" y="139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UjI-dJ-gPi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cQv-1I-2eB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CoG-pP-TMK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hGH-b7-8Vw" kind="relationship" relationship="rootViewController" id="bz3-pz-kJ8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5aa-8a-QK0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-954.39999999999998" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="user_default" width="200" height="200"/>
+    </resources>
+</document>
