@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  Airports
+
+  Created by Jordi van Hoorn on 9/11/17.
+  Copyright © 2017 Jordi. All rights reserved.
+*/
+
+"CFBundleDisplayName" = "Vliegvelden";
