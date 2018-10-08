@@ -68,8 +68,8 @@ class detailViewController: UIViewController, MKMapViewDelegate {
     
     func centerMapOnLocationAt(location: CLLocation, radius: Double) {
         let regionRadius: CLLocationDistance = radius
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(
-            location.coordinate, regionRadius, regionRadius )
+        let coordinateRegion = MKCoordinateRegion.init(
+            center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius )
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
@@ -90,7 +90,7 @@ class detailViewController: UIViewController, MKMapViewDelegate {
     func drawGreatCirlce(between airport1: Airport, and airport2: Airport) {
         let points = [airport1.locationData.coordinate, airport2.locationData.coordinate]
         let geodesic = MKGeodesicPolyline(coordinates: points, count: points.count)
-        mapView.add(geodesic)
+        mapView.addOverlay(geodesic)
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
