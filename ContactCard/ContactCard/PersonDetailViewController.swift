@@ -24,7 +24,7 @@ class PersonDetailViewController: UIViewController {
         }
         
         
-        NotificationCenter.default.addObserver(self, selector: #selector(grafRotate), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(grafRotate), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,7 +64,7 @@ class PersonDetailViewController: UIViewController {
             let data = try? Data(contentsOf: url!)
             DispatchQueue.main.async {
                 self.avatarImageView.image = UIImage(data: data!)
-                UIView.animate(withDuration: 1.5, delay: 0, options: UIViewAnimationOptions.curveEaseInOut, animations: { self.avatarImageView.alpha = 1.0 })
+                UIView.animate(withDuration: 1.5, delay: 0, options: UIView.AnimationOptions.curveEaseInOut, animations: { self.avatarImageView.alpha = 1.0 })
             }
         }
     }
